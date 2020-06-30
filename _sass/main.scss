@@ -1,0 +1,76 @@
+/* begin global stuff */
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+a {
+  color: black;
+}
+
+a:hover {
+  background-color: red;
+}
+/* end global stuff */
+
+/* Begin Nav Bar Styling */
+nav ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0rem;
+}
+
+nav li, a {
+  font-size:200%;
+  text-decoration: none;
+  display: inline;
+  padding-right: 0;
+}
+
+/* begin dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: yellow;
+  min-width: 160px;
+  //box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* end drop down menu */
+
+.current {
+  color: green;
+  background-color: yellow;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+/* End Nav Bar Styling */
+
+/* begin form stuff */
+form li {
+  list-style-type: none;
+  padding: 10px 0 10px 0;
+}
+
+form label, input, button {
+  display: block;
+}
+
+textarea {
+    width: 33%;
+    height: 100px;
+}
+/* end form stuff */
