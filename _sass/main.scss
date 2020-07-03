@@ -1,67 +1,146 @@
+/* vars */
+$font-family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$highlight-color: #DEFF00;
+$link-color: black;
+
+/* end vars */
+
+
 /* begin global stuff */
 body {
-  padding: 1rem;
-  font-family: sans-serif;
-}
-a {
-  color: black;
+  line-height:1.25;
+  //padding: 1rem;
 }
 
-a:hover {
-  background-color: red;
+.pure-g {
+  padding-left:1rem;
+  padding-right:1rem;
 }
+
+.pure-g > div {
+        box-sizing: border-box;
+    }
+    .l-box {
+        width:100%;
+        margin:auto;
+    }
+
+
+// links
+a {
+  color: $link-color;
+}
+a:hover {
+  background-color: $highlight-color;
+  text-decoration: none;
+  color: $link-color
+}
+
+li {
+  list-style-type: none;
+}
+
 /* end global stuff */
 
 /* Begin Nav Bar Styling */
+
+// trying a clickable dropdown
+/*hide the inputs/checkmarks and submenu*/
+.inv_check {
+  display: none;
+}
+
+input, ul.submenu {
+  display: none;
+}
+
+/*position the label*/
+label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+}
+
+.right {
+  //float: right;
+  //text-align:left;
+  text-justify: inter-word;
+}
+
+/*show the submenu when input is checked*/
+input:checked~ul.submenu {
+  display: block;
+}
+// clickable dropdown above
+
+nav {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
+  overflow:hidden;
+  //display:none;
+}
+
 nav ul {
   list-style-type:none;
   margin: 0;
-  padding: 0rem;
+  padding: 0;
 }
 
 nav li, a {
-  font-size:200%;
+  font-size: 200%;
   text-decoration: none;
   display: inline;
-  padding-right: 0;
+  padding: 2px;
+  margin: 0;
+  background-color: white;
 }
 
-/* begin dropdown menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
+.small-menu {
+  display:none;
+
+}
+.big-menu {
+  display:inline;
+}
+.content {
+  margin-top: 10rem;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: yellow;
-  min-width: 160px;
-  //box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
+.navbar {
+  //width:100%;
+  padding:0.5rem 0.5rem 0.5rem 0rem;
 
-.dropdown:hover .dropdown-content {
-  display: block;
 }
-/* end drop down menu */
 
 .current {
-  color: green;
-  background-color: yellow;
+  background-color: $highlight-color;
   font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
 }
 /* End Nav Bar Styling */
 
+/* begin blog listing style */
+
+/* end blog listing style */
+
 /* begin form stuff */
-form li {
-  list-style-type: none;
+form  {
+
   padding: 10px 0 10px 0;
 }
 

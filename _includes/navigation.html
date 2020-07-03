@@ -1,4 +1,13 @@
-<nav>
+<!-- trying out clickable menu
+<input class="inv_check" id="check01" type="checkbox" name="menu">
+<label for="check01">Menu</label>
+<ul class="submenu">
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+</ul>-->
+
+<!-- big menu for big devices -->
+<nav class="navbar navbar-expand-lg big-menu">
   <ul>
   {% for item in site.data.navigation %}
     <li><a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
@@ -7,3 +16,56 @@
   {% endfor %}
   </ul>
 </nav>
+
+
+<nav class="navbar navbar-expand-lg small-menu">
+  <input class="inv_check" id="check01" type="checkbox" name="menu">
+  {% for item in site.data.navigation %}
+    {% if page.url == item.link %}
+    <label class="current right" for="check01">{{ page.title }}</label>
+
+    {% endif %}
+  {% endfor %}
+  <ul class="submenu">
+    {% for item in site.data.navigation %}
+      {% if page.url != item.link %}
+        <li><a href="{{ item.link }}">
+          {{ item.name }}
+        </a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+<!-- small menu for small devices
+<nav class="navbar navbar-expand-lg small-menu">
+  <div class="dropdown">
+    <span><a href="/" class="current">
+      {% if page.layout != "default" %}
+        Home
+      {% endif %}
+      {% for item in site.data.navigation %}
+        {% if page.url == item.link %}
+          {{ item.name }}
+        {% endif %}
+      {% endfor %}
+    </a></span>
+    <div class="dropdown-content">
+      <ul>
+        {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- original
+  <ul>
+    <li>small menu</li>
+  {% for item in site.data.navigation %}
+    <li><a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+      {{ item.name }}
+    </a></li>
+  {% endfor %}
+  </ul> -->

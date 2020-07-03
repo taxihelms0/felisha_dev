@@ -1,14 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <!-- purecss stuff -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+    <!-- my styles -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% feed_meta %}
     {% seo %}
   </head>
   <body>
+    <div class="pure-g">
+      <div class="pure-u-1">
     {% include navigation.html %}
-    {{ content }}
+      </div>
+    </div>
+    <div class="pure-g content">
+      <div class="pure-u-1 l-box">
+        {{ content }}
+      </div>
+    </div>
   </body>
 </html>

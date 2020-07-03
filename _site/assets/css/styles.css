@@ -1,0 +1,73 @@
+/* vars */
+/* end vars */
+/* begin global stuff */
+body { line-height: 1.25; }
+
+.pure-g { padding-left: 1rem; padding-right: 1rem; }
+
+.pure-g > div { box-sizing: border-box; }
+
+.l-box { width: 100%; margin: auto; }
+
+a { color: black; }
+
+a:hover { background-color: #DEFF00; text-decoration: none; color: black; }
+
+li { list-style-type: none; }
+
+/* end global stuff */
+/* Begin Nav Bar Styling */
+/*hide the inputs/checkmarks and submenu*/
+.inv_check { display: none; }
+
+input, ul.submenu { display: none; }
+
+/*position the label*/
+label { position: relative; display: block; cursor: pointer; }
+
+.right { text-justify: inter-word; }
+
+/*show the submenu when input is checked*/
+input:checked ~ ul.submenu { display: block; }
+
+nav { position: fixed; /* Set the navbar to fixed position */ top: 0; overflow: hidden; }
+
+nav ul { list-style-type: none; margin: 0; padding: 0; }
+
+nav li, a { font-size: 200%; text-decoration: none; display: inline; padding: 2px; margin: 0; background-color: white; }
+
+.small-menu { display: none; }
+
+.big-menu { display: inline; }
+
+.content { margin-top: 10rem; }
+
+.navbar { padding: 0.5rem 0.5rem 0.5rem 0rem; }
+
+.current { background-color: #DEFF00; font-size: 2em; margin-left: 0; margin-right: 0; }
+
+/* End Nav Bar Styling */
+/* begin blog listing style */
+/* end blog listing style */
+/* begin form stuff */
+form { padding: 10px 0 10px 0; }
+
+form label, input, button { display: block; }
+
+textarea { width: 33%; height: 100px; }
+
+/* end form stuff */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.9px) { .small-menu { display: block; } .big-menu { display: none; } .content { margin-top: 2rem; } nav li, a { font-size: 1.25em; line-height: 1; display: block; } .current { line-height: 1.25; font-size: 1.8em; } }
+
+/* Small devices (landscape phones, 576px and up) */
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { /* nav li, a, .current { font-size: 2em; }*/ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { /*  nav li, a, .current { font-size: 2em; }*/ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { /*nav li, a, .current { font-size: 2em; }*/ }
+
+/*# sourceMappingURL=styles.css.map */
