@@ -13,7 +13,11 @@ a { color: black; }
 
 a:hover { background-color: #DEFF00; text-decoration: none; color: black; }
 
-li { list-style-type: none; }
+li { list-style-type: none; display: block; padding-right: 1rem; padding-bottom: 1.25rem; width: 100%; }
+
+ul { padding: 0; }
+
+.excerpt p { display: inline; padding: 0 1rem 0 1rem; }
 
 /* end global stuff */
 /* Begin Nav Bar Styling */

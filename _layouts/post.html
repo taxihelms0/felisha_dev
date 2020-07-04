@@ -10,4 +10,11 @@ layout: default
   {% endif %}
 </p>
 
+{% if page.media_file %}
+<audio controls>
+  <source src="{{ page.media_file }}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+{% endif %}
+
 {{ content }}
