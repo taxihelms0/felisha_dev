@@ -109,8 +109,8 @@ li {
 
 /* Add an active class to highlight the current page */
 .current {
+  
   background-color: $highlight-color;
-
 }
 .topnav a.active {
   background-color: $highlight-color;
@@ -124,9 +124,9 @@ li {
 /* adjust content height to account for nav */
 .content { // default height
   position: absolute;
-  left:8;
-  top:8;
-  right:8;
+  left:8px;
+  top:8px;
+  right:8px;
   margin-top: 3.5rem;
 }
 .doubleMenu {
@@ -134,6 +134,9 @@ li {
 }
 .tripleMenu {
   margin-top: 11.5rem!important;
+}
+.mobileMenu {
+  margin-top: 15.5rem!important;
 }
 
 // end from w3

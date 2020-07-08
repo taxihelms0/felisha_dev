@@ -32,7 +32,7 @@
 <nav class="topnav" id="myTopnav">
   <ul id="menuList">
     
-    <a href="/"  id="brand"class="menuItem">Very Very Long Site Name</a>
+    <a href="/"  id="brand"class="menuItem">Felisha Ledesma</a>
     
     <a href="/about.html" class="menuItem">About</a>
     
@@ -47,30 +47,36 @@
 </nav>
 
 <script>
-  let brandName;
-  let initials = [];
-  brandName = document.getElementById("brand").innerHTML;
-  initials.push(brandName[0]);
-  /* convert title to initials on resize */
-  for(let i=0; i<brandName.length; i++){
-    if(brandName[i] == " " && brandName[i+1]){
-      initials.push(brandName[i+1])
+  let brandName = document.getElementById("brand").innerHTML;
+  let inits;
+  function init() {
+    let initials = [];
+    initials[0] = (brandName[0]);
+    /* convert title to initials on resize */
+    for(let i=0; i<brandName.length; i++){
+      if(brandName[i] == " " && brandName[i+1]){
+        initials.push(brandName[i+1])
+      }
     }
+    initials.push(".");
+    return initials;
   }
-  initials.push(".");
   
   function reportWindowSize() {
-    //console.log(brandName);
+    console.log(brandName);
     if (matchMedia('only screen and (max-width: 600px)').matches) {
-      document.getElementById("brand").innerHTML = initials.join("");
+      document.getElementById("brand").innerHTML = inits.join("");
     } else {
       document.getElementById("brand").innerHTML = brandName;
     }
   }
-
-  window.onload = function() {
+  
+  function onLoad() {
+    inits = init();
     reportWindowSize();
   }
+  document.onload = onLoad();
+  window.onload = onLoad();
   
   window.addEventListener('resize',() => {
     reportWindowSize();
@@ -80,13 +86,15 @@
   /* toggle between initials and full site name */
   function dropDown() {
     let nav = document.getElementById("myTopnav");
-    
+    reportWindowSize();
     if (nav.className === "topnav") {
       nav.className += " responsive";
-      document.getElementById("brand").innerHTML = brandName;
+      document.getElementById("myContent").className += " mobileMenu";
+      // document.getElementById("brand").innerHTML = brandName;
     } else {
       nav.className = "topnav";
-      document.getElementById("brand").innerHTML = initials.join("");
+      document.getElementById("myContent").className = "content";
+      // document.getElementById("brand").innerHTML = inits.join("");
     }
   }
 </script>
