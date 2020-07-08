@@ -17,7 +17,7 @@ li { list-style-type: none; display: block; padding-right: 1rem; padding-bottom:
 
 /* end global stuff */
 /* Add a black background color to the top navigation */
-.topnav { overflow: hidden; margin-bottom: 1rem; position: fixed; top: 0; right: 0; left: 0; background-color: white; margin-left: auto; margin-right: auto; line-height: 1.15; z-index: 1000; }
+.topnav { overflow: hidden; position: fixed; top: 0; right: 0; left: 0; background-color: white; margin-left: auto; margin-right: auto; line-height: 1.15; z-index: 1000; }
 
 /* Style the links inside the navigation bar */
 .topnav a { float: left; display: block; color: black; text-align: left; margin-left: 1rem; margin-right: 1rem; text-decoration: none; font-size: 3.5rem; }
@@ -36,11 +36,11 @@ li { list-style-type: none; display: block; padding-right: 1rem; padding-bottom:
 .topnav .icon { display: none; }
 
 /* adjust content height to account for nav */
-.content { position: absolute; left: 8; top: 8; right: 8; margin-top: 3rem; }
+.content { position: absolute; left: 8; top: 8; right: 8; margin-top: 3.5rem; }
 
-.doubleMenu { margin-top: 6.5rem !important; }
+.doubleMenu { margin-top: 7.5rem !important; }
 
-.tripleMenu { margin-top: 10.5rem !important; }
+.tripleMenu { margin-top: 11.5rem !important; }
 
 /* begin blog listing style */
 /* end blog listing style */
