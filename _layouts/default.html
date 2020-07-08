@@ -5,23 +5,42 @@
     <title>{{ page.title }}</title>
     <!-- purecss stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
     <!-- my styles -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% feed_meta %}
     {% seo %}
   </head>
   <body>
-    <div class="pure-g">
-      <div class="pure-u-1">
     {% include navigation.html %}
-      </div>
-    </div>
-    <div class="pure-g content">
-      <div class="pure-u-1 l-box">
-        {{ content }}
-      </div>
+    <div class="content" id="myContent" style="">
+      {{ content }}
     </div>
   </body>
 </html>
+<script>
+  let content = document.getElementById("myContent");
+  function getOffsetTop() {
+    let items = document.getElementsByClassName("menuItem");
+    let offsets = [];
+    
+    for(let i=0; i < items.length; i++) {
+      offsets.push(items[i].offsetTop);
+    }
+    let maxOffset = Math.max.apply( Math, offsets );
+      if(maxOffset > 64){
+        content.className = "content tripleMenu";
+      } else if (maxOffset > 0) {
+        content.className = "content doubleMenu";
+      } else {
+        content.className = "content";
+      }
+    }
+
+  window.onload = function() {
+    getOffsetTop();
+  }
+  
+  window.addEventListener('resize',() => {
+    getOffsetTop();
+  });
+</script>

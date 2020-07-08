@@ -1,71 +1,58 @@
-<!-- trying out clickable menu
-<input class="inv_check" id="check01" type="checkbox" name="menu">
-<label for="check01">Menu</label>
-<ul class="submenu">
-  <li><a href="#">Item 1</a></li>
-  <li><a href="#">Item 2</a></li>
-</ul>-->
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- big menu for big devices -->
-<nav class="navbar navbar-expand-lg big-menu">
-  <ul>
-  {% for item in site.data.navigation %}
-    <li><a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-      {{ item.name }}
-    </a></li>
-  {% endfor %}
-  </ul>
-</nav>
-
-
-<nav class="navbar navbar-expand-lg small-menu">
-  <input class="inv_check" id="check01" type="checkbox" name="menu">
-  {% for item in site.data.navigation %}
-    {% if page.url == item.link %}
-    <label class="current right" for="check01">{{ page.title }}</label>
-
-    {% endif %}
-  {% endfor %}
-  <ul class="submenu">
+<nav class="topnav" id="myTopnav">
+  <ul id="menuList">
     {% for item in site.data.navigation %}
-      {% if page.url != item.link %}
-        <li><a href="{{ item.link }}">
-          {{ item.name }}
-        </a></li>
-      {% endif %}
+    <a href="{{ item.link }}" {% if item.link == '/' %} id="brand"{% endif %}class="{% if page.url == item.link %}current {% endif %}menuItem">{{ item.name }}</a>
     {% endfor %}
+    <a href="javascript:void(0);" class="icon" onclick="dropDown()">
+      <i class="fa fa-bars"></i>
+    </a>
   </ul>
 </nav>
-<!-- small menu for small devices
-<nav class="navbar navbar-expand-lg small-menu">
-  <div class="dropdown">
-    <span><a href="/" class="current">
-      {% if page.layout != "default" %}
-        Home
-      {% endif %}
-      {% for item in site.data.navigation %}
-        {% if page.url == item.link %}
-          {{ item.name }}
-        {% endif %}
-      {% endfor %}
-    </a></span>
-    <div class="dropdown-content">
-      <ul>
-        {% for item in site.data.navigation %}
-        <li>
-          <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- original
-  <ul>
-    <li>small menu</li>
-  {% for item in site.data.navigation %}
-    <li><a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-      {{ item.name }}
-    </a></li>
-  {% endfor %}
-  </ul> -->
+
+<script>
+  let brandName;
+  let initials = [];
+  brandName = document.getElementById("brand").innerHTML;
+  initials.push(brandName[0]);
+  /* convert title to initials on resize */
+  for(let i=0; i<brandName.length; i++){
+    if(brandName[i] == " " && brandName[i+1]){
+      initials.push(brandName[i+1])
+    }
+  }
+  initials.push(".");
+  
+  function reportWindowSize() {
+    //console.log(brandName);
+    if (matchMedia('only screen and (max-width: 600px)').matches) {
+      document.getElementById("brand").innerHTML = initials.join("");
+    } else {
+      document.getElementById("brand").innerHTML = brandName;
+    }
+  }
+
+  window.onload = function() {
+    reportWindowSize();
+  }
+  
+  window.addEventListener('resize',() => {
+    reportWindowSize();
+  });
+
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+  /* toggle between initials and full site name */
+  function dropDown() {
+    let nav = document.getElementById("myTopnav");
+    
+    if (nav.className === "topnav") {
+      nav.className += " responsive";
+      document.getElementById("brand").innerHTML = brandName;
+    } else {
+      nav.className = "topnav";
+      document.getElementById("brand").innerHTML = initials.join("");
+    }
+  }
+</script>

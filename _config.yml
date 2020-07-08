@@ -5,11 +5,6 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
       type: "posts"
     values:
       layout: "post"
@@ -26,3 +21,5 @@ plugins:
 
 # variables
 form_key: {{ site.env.STATICFORMS_KEY }}
+
+name: "Site Name"

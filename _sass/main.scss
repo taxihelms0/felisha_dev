@@ -20,24 +20,21 @@ $link-color: black;
 
 
 /* begin global stuff */
+* {
+  font-family:$font-family-sans-serif;
+}
 body {
   line-height:1.25;
   //padding: 1rem;
 }
 
-.pure-g {
+.content ul, p{
+  padding-inline-start:0rem;
   padding-left:1rem;
   padding-right:1rem;
+  margin-right:0;
+  margin-left:0;
 }
-
-.pure-g > div {
-        box-sizing: border-box;
-    }
-    .l-box {
-        width:100%;
-        margin:auto;
-    }
-
 
 // links
 a {
@@ -56,9 +53,6 @@ li {
   padding-bottom:1.25rem;
   width:100%;
 }
-ul {
-  padding:0;
-}
 
 .excerpt p {
   display:inline;
@@ -67,84 +61,122 @@ ul {
 
 /* end global stuff */
 
-/* Begin Nav Bar Styling */
-
-// trying a clickable dropdown
-/*hide the inputs/checkmarks and submenu*/
-.inv_check {
-  display: none;
+// /* Begin Nav Bar Styling */
+// from w3
+/* Add a black background color to the top navigation */
+.topnav {
+  //background-color: #333;
+  overflow: hidden;
+  margin-bottom:1rem;
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  background-color:white;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.15;
+  z-index:1000;
 }
 
-input, ul.submenu {
-  display: none;
-}
-
-/*position the label*/
-label {
-  position: relative;
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
   display: block;
-  cursor: pointer;
-
-}
-
-.right {
-  //float: right;
-  //text-align:left;
-  text-justify: inter-word;
-}
-
-/*show the submenu when input is checked*/
-input:checked~ul.submenu {
-  display: block;
-}
-// clickable dropdown above
-
-nav {
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0;
-  overflow:hidden;
-  //display:none;
-}
-
-nav ul {
-  list-style-type:none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li, a {
-  font-size: 200%;
+  color: $link-color;
+  text-align: left;
+  //padding: 14px 16px;
+  margin-left:1rem;
+  margin-right:1rem;
   text-decoration: none;
-  display: inline;
-  padding: 2px;
-  margin: 0;
-  background-color: white;
+  font-size: 3.5rem;
 }
 
-.small-menu {
-  display:none;
-
-}
-.big-menu {
-  display:inline;
-}
-.content {
-  margin-top: 10rem;
+.topnav #brand {
+  //margin-right:1rem;
 }
 
-.navbar {
-  //width:100%;
-  padding:0.5rem 0.5rem 0.5rem 0rem;
-
+.topnav ul {
+  padding:0;
+  margin:0;
 }
 
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: $highlight-color;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
 .current {
   background-color: $highlight-color;
-  font-size: 2em;
-  margin-left: 0;
-  margin-right: 0;
+
 }
-/* End Nav Bar Styling */
+.topnav a.active {
+  background-color: $highlight-color;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+/* adjust content height to account for nav */
+.content { // default height
+  position: absolute;
+  left:8;
+  top:8;
+  right:8;
+  margin-top: 3rem;
+}
+.doubleMenu {
+  margin-top: 6.5rem!important;
+}
+.tripleMenu {
+  margin-top: 10.5rem!important;
+}
+
+// end from w3
+
+// nav {
+//   position: fixed; /* Set the navbar to fixed position */
+//   top: 0;
+//   overflow:hidden;
+//   //display:none;
+// }
+
+// nav ul {
+//   list-style-type:none;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// nav li, a {
+//   font-size: 200%;
+//   text-decoration: none;
+//   display: inline;
+//   padding: 2px;
+//   margin: 0;
+//   background-color: white;
+// }
+
+// .small-menu {
+//   display:none;
+
+// }
+// .big-menu {
+//   display:inline;
+// }
+// .content {
+//   margin-top: 10rem;
+// }
+
+// .navbar {
+//   //width:100%;
+//   padding:0.5rem 0.5rem 0.5rem 0rem;
+
+// }
+// /* End Nav Bar Styling */
 
 /* begin blog listing style */
 
@@ -152,7 +184,6 @@ nav li, a {
 
 /* begin form stuff */
 form  {
-
   padding: 10px 0 10px 0;
 }
 

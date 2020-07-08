@@ -1,13 +1,11 @@
 /* vars */
 /* end vars */
 /* begin global stuff */
+* { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
 body { line-height: 1.25; }
 
-.pure-g { padding-left: 1rem; padding-right: 1rem; }
-
-.pure-g > div { box-sizing: border-box; }
-
-.l-box { width: 100%; margin: auto; }
+.content ul, p { padding-inline-start: 0rem; padding-left: 1rem; padding-right: 1rem; margin-right: 0; margin-left: 0; }
 
 a { color: black; }
 
@@ -15,42 +13,35 @@ a:hover { background-color: #DEFF00; text-decoration: none; color: black; }
 
 li { list-style-type: none; display: block; padding-right: 1rem; padding-bottom: 1.25rem; width: 100%; }
 
-ul { padding: 0; }
-
 .excerpt p { display: inline; padding: 0 1rem 0 1rem; }
 
 /* end global stuff */
-/* Begin Nav Bar Styling */
-/*hide the inputs/checkmarks and submenu*/
-.inv_check { display: none; }
+/* Add a black background color to the top navigation */
+.topnav { overflow: hidden; margin-bottom: 1rem; position: fixed; top: 0; right: 0; left: 0; background-color: white; margin-left: auto; margin-right: auto; line-height: 1.15; z-index: 1000; }
 
-input, ul.submenu { display: none; }
+/* Style the links inside the navigation bar */
+.topnav a { float: left; display: block; color: black; text-align: left; margin-left: 1rem; margin-right: 1rem; text-decoration: none; font-size: 3.5rem; }
 
-/*position the label*/
-label { position: relative; display: block; cursor: pointer; }
+.topnav ul { padding: 0; margin: 0; }
 
-.right { text-justify: inter-word; }
+/* Change the color of links on hover */
+.topnav a:hover { background-color: #DEFF00; color: black; }
 
-/*show the submenu when input is checked*/
-input:checked ~ ul.submenu { display: block; }
+/* Add an active class to highlight the current page */
+.current { background-color: #DEFF00; }
 
-nav { position: fixed; /* Set the navbar to fixed position */ top: 0; overflow: hidden; }
+.topnav a.active { background-color: #DEFF00; color: white; }
 
-nav ul { list-style-type: none; margin: 0; padding: 0; }
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon { display: none; }
 
-nav li, a { font-size: 200%; text-decoration: none; display: inline; padding: 2px; margin: 0; background-color: white; }
+/* adjust content height to account for nav */
+.content { position: absolute; left: 8; top: 8; right: 8; margin-top: 3rem; }
 
-.small-menu { display: none; }
+.doubleMenu { margin-top: 6.5rem !important; }
 
-.big-menu { display: inline; }
+.tripleMenu { margin-top: 10.5rem !important; }
 
-.content { margin-top: 10rem; }
-
-.navbar { padding: 0.5rem 0.5rem 0.5rem 0rem; }
-
-.current { background-color: #DEFF00; font-size: 2em; margin-left: 0; margin-right: 0; }
-
-/* End Nav Bar Styling */
 /* begin blog listing style */
 /* end blog listing style */
 /* begin form stuff */
@@ -61,17 +52,10 @@ form label, input, button { display: block; }
 textarea { width: 33%; height: 100px; }
 
 /* end form stuff */
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.9px) { .small-menu { display: block; } .big-menu { display: none; } .content { margin-top: 2rem; } nav li, a { font-size: 1.25em; line-height: 1; display: block; } .current { line-height: 1.25; font-size: 1.8em; } }
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) { .topnav a:not(:first-child) { display: none; } .topnav a.current { display: inline; } .topnav a.icon { float: right; display: block; } .topnav { background-color: white; } }
 
-/* Small devices (landscape phones, 576px and up) */
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { /* nav li, a, .current { font-size: 2em; }*/ }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { /*  nav li, a, .current { font-size: 2em; }*/ }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { /*nav li, a, .current { font-size: 2em; }*/ }
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) { .topnav.responsive { position: relative; } .topnav.responsive a.icon { position: absolute; right: 0; top: 0; } .topnav.responsive a { float: none; display: block; text-align: left; } }
 
 /*# sourceMappingURL=styles.css.map */
