@@ -25,13 +25,14 @@ $link-color: black;
 }
 body {
   line-height:1.25;
+  margin:0px;
   //padding: 1rem;
 }
 
 .content ul, p{
   padding-inline-start:0rem;
-  padding-left:1rem;
-  padding-right:1rem;
+  // padding-left:1rem;
+  // padding-right:1rem;
   margin-right:0;
   margin-left:0;
 }
@@ -46,28 +47,49 @@ a:hover {
   color: $link-color
 }
 
-li {
+.content li {
   list-style-type: none;
   display: block;
-  padding-right:1rem;
-  padding-bottom:1.25rem;
-  width:100%;
+  // padding-right:1rem;
+  padding:1.25rem;
+  // padding-bottom:1.25rem;
+  margin-left:auto;
+  margin-right:auto;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
 }
+
+.content p {
+  margin-top:1rem;
+  padding-top:1.25rem;
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-bottom:1.25rem;
+}
+
+#myContent {
+  // padding-top:1rem;
+  display: block;
+  // padding-right:1rem;
+  // padding:1.25rem;
+  padding-top:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 .excerpt p {
   display:inline;
   padding:0 1rem 0 1rem;
+  
 }
 
 /* end global stuff */
 
 // /* Begin Nav Bar Styling */
-// from w3
-/* Add a black background color to the top navigation */
+
 .topnav {
-  //background-color: #333;
   overflow: hidden;
-  // margin-bottom:1rem;
   position:fixed;
   top:0;
   right:0;
@@ -77,23 +99,20 @@ li {
   margin-right:auto;
   line-height:1.15;
   z-index:1000;
+  border-style:solid;
+  border-radius:0;
+  border-width:0px 0px 1px 0px;
 }
 
-/* Style the links inside the navigation bar */
+/* navbar links */
 .topnav a {
   float: left;
   display: block;
   color: $link-color;
   text-align: left;
-  //padding: 14px 16px;
   margin-left:1rem;
-  // margin-right:1rem;
   text-decoration: none;
   font-size: 3.5rem;
-}
-
-.topnav #brand {
-  //margin-right:1rem;
 }
 
 .topnav ul {
@@ -123,79 +142,82 @@ li {
 }
 /* adjust content height to account for nav */
 .content { // default height
-  position: absolute;
-  left:8px;
-  top:8px;
-  right:8px;
-  margin-top: 3.5rem;
+  //position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+  // left:8px;
+  // top:8px;
+  // right:8px;
+  margin-top: 4rem;
 }
 .doubleMenu {
-  margin-top: 7.5rem!important;
+  margin-top: 8rem!important;
 }
 .tripleMenu {
-  margin-top: 11.5rem!important;
+  margin-top: 12rem!important;
 }
 .mobileMenu {
-  margin-top: 15.5rem!important;
+  margin-top: 16rem!important;
 }
-
-// end from w3
-
-// nav {
-//   position: fixed; /* Set the navbar to fixed position */
-//   top: 0;
-//   overflow:hidden;
-//   //display:none;
-// }
-
-// nav ul {
-//   list-style-type:none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// nav li, a {
-//   font-size: 200%;
-//   text-decoration: none;
-//   display: inline;
-//   padding: 2px;
-//   margin: 0;
-//   background-color: white;
-// }
-
-// .small-menu {
-//   display:none;
-
-// }
-// .big-menu {
-//   display:inline;
-// }
-// .content {
-//   margin-top: 10rem;
-// }
-
-// .navbar {
-//   //width:100%;
-//   padding:0.5rem 0.5rem 0.5rem 0rem;
-
-// }
-// /* End Nav Bar Styling */
+/* end nav styling */
 
 /* begin blog listing style */
 
 /* end blog listing style */
 
 /* begin form stuff */
-form  {
-  padding: 10px 0 10px 0;
+form {
+  width:33%;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  text-align:left;
+  padding-top:1.25rem;
+  padding-inline-start:0;
+  margin-top:2rem;
+  
 }
 
-form label, input, button {
+form input {
+  //padding: 1rem;
+  border-width:1px;
+  border-color:black;
+  padding-top:1rem;
+  // margin-left:auto;
+  // margin-right:auto;
+  width: 75%;
+  height: 15px;
   display: block;
 }
 
+form label, button{
+  margin-top:0.5rem;
+  display:block;
+}
+
+form button {
+  height: 50px;
+  width: 75px;
+  border-radius: 5px;
+  background-color:$highlight-color;
+}
+
 textarea {
-    width: 33%;
+    width: 100%;
     height: 100px;
+    margin-bottom:2px;
+    border-width:1px;
+    border-color:black;
+    height:200px;
+}
+
+.ohnohoney{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
 }
 /* end form stuff */
