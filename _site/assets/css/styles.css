@@ -27,8 +27,10 @@ a:hover { background-color: #DEFF00; text-decoration: none; color: black; }
 
 .topnav ul { padding: 0; margin: 0; }
 
+#brand { background-color: white; }
+
 /* Change the color of links on hover */
-.topnav a:hover { background-color: #DEFF00; color: black; }
+.topnav a:hover, #brand:hover { background-color: #DEFF00; color: black; }
 
 /* Add an active class to highlight the current page */
 .current { background-color: #DEFF00; }
@@ -59,7 +61,7 @@ form label, button { margin-top: 0.5rem; display: block; }
 
 form button { height: 50px; width: 75px; border-radius: 5px; background-color: #DEFF00; }
 
-textarea { width: 100%; height: 100px; margin-bottom: 2px; border-width: 1px; border-color: black; height: 200px; }
+textarea { width: 100%; height: 100px; margin-bottom: 2px; border-width: 1px; border-color: black; height: 275px; }
 
 .ohnohoney { opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1; }
 

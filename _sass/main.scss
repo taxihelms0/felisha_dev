@@ -120,8 +120,12 @@ a:hover {
   margin:0;
 }
 
+#brand {
+  background-color:white;
+}
+
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav a:hover, #brand:hover {
   background-color: $highlight-color;
   color: black;
 }
@@ -208,7 +212,7 @@ textarea {
     margin-bottom:2px;
     border-width:1px;
     border-color:black;
-    height:200px;
+    height:275px;
 }
 
 .ohnohoney{
